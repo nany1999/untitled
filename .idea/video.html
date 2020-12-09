@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<p>点击按钮创建 VIDEO 元素，将播放 .ogg 文件格式的视频</p>
+<button onclick="myFunction()">点我</button>
+<p id="demo"></p>
+<script>
+    function myFunction(){
+        var x = document.createElement("VIDEO");
+        x.setAttribute("width", "1200");
+        x.setAttribute("height", "800");
+        x.setAttribute("controls", "controls");
+        x.setAttribute("src", "123.mp4");
+        document.body.appendChild(x);
+        document.getElementById("demo").innerHTML = "<strong>注意:</strong>IE 和 Safari 浏览器不支持 .ogg 文件格式。这边只是个简单的示例。";
+
+    }
+</script>
+<video id="myVideo" width="320" height="240" controls>
+    <source src="123.mp4" type="video/mp4"> </video>
+    <button onclick="getCurTime()"type="button">获取当前时间</button>
+<button onclick="setCurTime()"type="button">设置当前时间</button>
+
+<script>
+    var c = document.getElementById("myVideo");
+    function getCurTime(){
+        alert(c.currentTime);
+    }
+    function setCurTime(){
+        c.currentTime = 5;
+    }
+</script>
+
+</body>
+</html>
